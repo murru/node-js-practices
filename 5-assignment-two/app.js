@@ -13,11 +13,14 @@ app.use('/users', (req, res, next) => {
             <li>Gabriel Dasilva</li>
         </ul>
         <p><a href="/">Go back</a></p>
+        `);
+    });
+    
+    app.use('/', (req, res, next) => {
+        res.send(`
+        <h1>This is the root url!</h1>
+        <p><a href="/users">Go to users</a></p>
     `);
-});
-
-app.use('/', (req, res, next) => {
-    res.send('<h1>This is the root url!</h1>');
 });
 
 app.listen(5000);
